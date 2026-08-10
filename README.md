@@ -1,16 +1,71 @@
-# React + Vite
+# Wallet UI
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A modern and responsive digital wallet interface built with **React** and **Tailwind CSS**.
 
-Currently, two official plugins are available:
+The project focuses on a clean dark-mode experience for managing balances, viewing cryptocurrency exchange rates, using a virtual card, selecting contacts, and making transfers.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Preview
 
-## React Compiler
+![Wallet UI Preview](./wallet-ui-preview.png)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Features
 
-## Expanding the Oxlint configuration
+- 💰 Balance overview
+- 💸 Send and receive money
+- 👥 Contact selection and search
+- 📊 Cryptocurrency exchange rates
+- 💳 Virtual Visa card interface
+- 🔄 Transaction history
+- 📱 Responsive desktop and mobile layout
+- 🌙 Modern dark UI
+- ⚡ Built with React and Tailwind CSS
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## Tech Stack
+
+- React
+- Tailwind CSS
+- Vite
+- Lucide React
+
+## Getting Started
+
+Clone the repository:
+
+```bash
+git clone https://github.com/ryankennedydev/wallet-ui.git
+cd wallet-ui
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+Then open the local URL shown in your terminal.
+
+## Project Structure
+
+```text
+wallet-ui/
+├── public/
+├── src/
+├── index.html
+├── package.json
+├── package-lock.json
+└── vite.config.js
+```
+
+## Purpose
+
+This project was created as a frontend practice project to explore React component architecture, state management, responsive layouts, and modern fintech UI design.
+
+## License
+
+This project is available for learning and personal use.
