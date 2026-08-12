@@ -163,7 +163,7 @@ const [senduser, setsendUser] = useState("")
         </div>
         <div className="flex group md:w-100">
           <button onClick={() => {
-    if (amount && saldo >= amount && newsend) {
+    if (amount && saldo >= amount && newsend &&amount > 0) {
       setSaldo(saldo-amount)
       setHistoriclist((prev) => [
         ...prev,
