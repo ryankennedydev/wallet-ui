@@ -7,10 +7,11 @@ import Send from "./send.jsx";
 import Navbar from "./Navbar.jsx";
 const Wallet = ({ name, saldo, setSaldo, view, setView, coin, setCoin }) => {
   return (
-    <section className="h-screen w-screen  bg-stone-950 justify-center  ">
+    <section className="h-screen w-screen  bg-stone-950 justify-center ">
+      
       <Navbar />
-      <div className="justify-between flex  bg-stone-950">
-        <div className="flex gap-2 items-center m-1 p-2 ">
+      <main className="justify-between flex  bg-stone-950 p-4 ">
+        <div className="flex gap-2 items-center  p-2 ">
           <img
             className="w-8 h-8 rounded-full"
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfjtGvdcDXhvvVWgjNWR7G-bfWseWvP9y0RN5_wyg1rg&s=10"
@@ -26,9 +27,9 @@ const Wallet = ({ name, saldo, setSaldo, view, setView, coin, setCoin }) => {
 
           <Bell className="text-white p-2 rounded-full w-10 h-10 bg-stone-900" />
         </div>
-      </div>
-
-      <div className=" h-60 bg-linear-120 bg-stone-950  ">
+      </main>
+      
+      <div className=" h-60 bg-linear-120 bg-stone-950   ">
         <Card
           saldo={saldo}
           setSaldo={setSaldo}
@@ -43,9 +44,10 @@ const Wallet = ({ name, saldo, setSaldo, view, setView, coin, setCoin }) => {
         <MoneyGlobal coin={coin} saldo={saldo} />
       </div>
 
-      <div>
+      <div className="">
         <AreaCard />
       </div>
+      
     </section>
   );
 };

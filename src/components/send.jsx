@@ -3,6 +3,7 @@ import Contacts from "./contacts";
 import { useState } from "react";
 import Historic from "./historic";
 import Navbar from "./Navbar";
+import { useNavigate } from "react-router-dom";
 const Send = ({coin,saldo,view,setSaldo}) => {
 const [taxa,setTaxa] = useState(0)
 const [amount,setamount] = useState("")
@@ -82,6 +83,8 @@ const [historiclist, setHistoriclist] = useState([
   },
 ])
 
+const navigate = useNavigate()
+
 const [senduser, setsendUser] = useState("")
 
 
@@ -89,12 +92,12 @@ const [senduser, setsendUser] = useState("")
     <div>
       <Navbar />
     
-    <section className="flex w-screen bg-stone-950 ">
+    <section className="flex w-screen bg-stone-950  ">
       
-      <main className="m-5 flex flex-col gap-5 w-full sm:items-center">
+      <main className="m-5 flex flex-col gap-5 w-full sm:items-center mb-25">
         <div className="flex gap-3 items-center ">
           <div>
-            <MoveLeft
+            <MoveLeft onClick={(e) => navigate("/home")}
               size={50}
               className="bg-stone-800/90 text-white p-3 rounded-full"
             />
