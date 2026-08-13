@@ -7,8 +7,7 @@ const Historic = ({
   newsend,
   saldo,
   historiclist,
-  setHistoriclist,
-}) => {
+  setHistoriclist,}) => {
   const [activeall, setactived] = useState(null);
   const [viewevery, setviewevery] = useState(false)
 

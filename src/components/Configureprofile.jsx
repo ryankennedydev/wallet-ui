@@ -1,14 +1,18 @@
 import React, { useState } from 'react'
-
+import { useNavigate } from 'react-router-dom'
 const Configureprofile = ({name, setName}) => {
 
+  navigation = useNavigate()
 
   const [valuename,setvaluename] = useState("")
 
+  
+
   const nameadd = () => {
-    if (valuename && valuename.length <=30) {
+    if (valuename && valuename.length <=20 ) {
       setName(valuename)
       setvaluename("")
+      navigation("/home")
     }
   }
 
@@ -25,7 +29,7 @@ const Configureprofile = ({name, setName}) => {
                 <h1 className='text-stone-100'>Your name</h1>
                 <div className='flex items-end flex-col'>
                   <input value={valuename} onChange={((e) => setvaluename(e.target.value))} placeholder='Enter your name' className=' outline-none w-full p-3 rounded-2xl text-stone-500 bg-stone-950 border-1 border-stone-600/40 placeholder:text-stone-500 ' type="text"  />
-                  <h1 className={`${valuename.length > 30 ? "text-red-500" :"text-stone-100" }`}>{valuename ? valuename.length : "0"}/30</h1>
+                  <h1 className={`${valuename.length > 20 ? "text-red-500" :"text-stone-100" }`}>{valuename ? valuename.length : "0"}/20</h1>
 
                 </div>
 
@@ -33,8 +37,8 @@ const Configureprofile = ({name, setName}) => {
               </div>
 
               <div>
-                  <button onClick={nameadd}  className="w-full bg-yellow-300 p-3 rounded-2xl active:scale-99 ">Login</button>
-                </div>v
+                  <button onClick={nameadd}  className="w-full bg-yellow-300 p-3 rounded-2xl  active:scale-99 ">Continue</button>
+                </div>
 
           </div>
       </main>

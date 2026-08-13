@@ -1,16 +1,27 @@
 import React, { useState } from "react";
 import backgroundLogin from "../assets/backgroundlogin3.png";
 import backgroundMobile from "../assets/backgroundmobile.png";
+
+import { useNavigate } from "react-router-dom";
+
 const Login = () => {
   const [userlogin, setuserLogin] = useState("");
   const [passwordlogin, setpasswordlogin] = useState("");
 
+  const [activedsalve,setactivedsalve] = useState(false)
+
+  const navigate = useNavigate()
+  
+
   const loginclick = (e) => {
     
     if (userlogin && passwordlogin) {
-      return alert("teste");
+      return navigate("/configure");
     }
   };
+  const create = () => {
+    return navigate("/createaccount")
+  }
   return (
     <main
       className="flex justify-center items-center w-screen h-screen bg-stone-950 bg-cover bg-center bg-no-repeat "
@@ -29,8 +40,7 @@ const Login = () => {
               <input
                 value={userlogin}
                 onChange={(e) => setuserLogin(e.target.value)}
-                className={`p-3 rounded-lg outline-none bg-stone-950 border-1 border placeholder:text-stone-500 text-stone-500 border-stone-500/40"
-                placeholder="Enter your CPF `}
+                className={`p-3 rounded-lg outline-none bg-stone-950 border-1  placeholder:text-stone-500 text-stone-500 border-stone-500/40 `} placeholder="000-000-000-00"
                 type="email"
                 name=""
                 id=""
@@ -42,7 +52,7 @@ const Login = () => {
                 value={passwordlogin}
                 onChange={(e) => setpasswordlogin(e.target.value)}
                 className="p-3 rounded-lg outline-none bg-stone-950 border-1 border placeholder:text-stone-500 text-stone-500 border-stone-500/40"
-                placeholder="Enter your CPF"
+                placeholder="Enter your password"
                 type="email"
                 name=""
                 id=""
@@ -50,7 +60,7 @@ const Login = () => {
             </div>
           </main>
           <div>
-            <main className=" justify-between flex  ">
+            <main className=" items-center flex  flex-col  ">
               <div className="flex gap-2 items-center ">
                 <input className="w-4" type="checkbox" name="" id="" />
                 <h1 className="text-stone-100 text-[15px]">Remember me</h1>
@@ -67,7 +77,7 @@ const Login = () => {
             <button onClick={loginclick} className="w-full bg-yellow-300 p-3 rounded-2xl active:scale-99 ">
               Login
             </button>
-            <button className="w-full backdrop-blur-3xl bg-stone-950/40 text-blue-300 p-3 rounded-2xl">
+            <button onClick={create} className="w-full backdrop-blur-3xl bg-stone-950/40 text-blue-300 p-3 rounded-2xl">
               Create Account{" "}
             </button>
           </div>
