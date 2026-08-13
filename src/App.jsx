@@ -7,6 +7,8 @@ import Configureprofile from './components/Configureprofile'
 import Createaccount from './components/createaccount'
 import Send from './components/send'
 
+import Investments from './components/Investiments'
+
 const App = () => {
 
   const [name, setName] = useState("")
@@ -64,7 +66,18 @@ const App = () => {
         <Wallet
           coin={coin} saldo={saldo} view={view} setSaldo={setSaldo} name={name} setView={setView} setCoin={setCoin}/>
       )
-    }
+    },
+{
+  path: "/investments",
+  element: (
+    <Investments
+      coin={coin}
+      saldo={saldo}
+      view={view}
+      setSaldo={setSaldo}
+    />
+  )
+},
     
   ])
 

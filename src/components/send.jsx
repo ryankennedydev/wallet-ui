@@ -2,6 +2,7 @@ import { Coins, MoveLeft, Search } from "lucide-react";
 import Contacts from "./contacts";
 import { useState } from "react";
 import Historic from "./historic";
+import Navbar from "./Navbar";
 const Send = ({coin,saldo,view,setSaldo}) => {
 const [taxa,setTaxa] = useState(0)
 const [amount,setamount] = useState("")
@@ -85,7 +86,11 @@ const [senduser, setsendUser] = useState("")
 
 
   return (
+    <div>
+      <Navbar />
+    
     <section className="flex w-screen bg-stone-950 ">
+      
       <main className="m-5 flex flex-col gap-5 w-full sm:items-center">
         <div className="flex gap-3 items-center ">
           <div>
@@ -188,6 +193,7 @@ const [senduser, setsendUser] = useState("")
         
       </main>
     </section>
+    </div>
   );
 };
 
