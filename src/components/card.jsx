@@ -43,7 +43,7 @@ const viewmoney = () => {
 
                 <div className='flex gap-5 items-center text-white'>
                     <div className='flex flex-col gap-1 items-center bg-stone-950/50 p-2 rounded-2xl'>
-                        <MoveUpRight  className='bg-stone-950 text-white w-10 h-10 p-2 rounded-lg'/>
+                        <MoveUpRight   className='bg-stone-950 text-white w-10 h-10 p-2 rounded-lg'/>
                         <h1>Send</h1>
                     </div>
 

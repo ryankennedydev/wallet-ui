@@ -11,6 +11,8 @@ import Investments from './components/Investiments'
 
 const App = () => {
 
+
+  const [investment, setInvestment] = useState(10)
   const [name, setName] = useState("")
   const [saldo, setSaldo] = useState(3213)
   const [view, setView] = useState(false)
@@ -74,7 +76,7 @@ const App = () => {
       coin={coin}
       saldo={saldo}
       view={view}
-      setSaldo={setSaldo}
+      setSaldo={setSaldo} investment={investment} setInvestment={setInvestment}
     />
   )
 },
