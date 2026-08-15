@@ -12,6 +12,7 @@ import Navbar from "./Navbar";
 import { useEffect, useState } from "react";
 
 import { useNavigate } from "react-router-dom";
+import Spaceheight from "./Spaceheight";
 
 const Investiments = ({ coin, investment, setInvestment }) => {
   const navigate = useNavigate(0);
@@ -236,6 +237,8 @@ const Investiments = ({ coin, investment, setInvestment }) => {
               </div>
             </main>
           </div>
+          {/* spaceend */}
+          <Spaceheight />
         </main>
       </section>
     </div>
