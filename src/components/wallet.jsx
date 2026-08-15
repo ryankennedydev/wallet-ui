@@ -5,6 +5,8 @@ import { useState } from "react";
 import AreaCard from "./AreaCard";
 import Send from "./send.jsx";
 import Navbar from "./Navbar.jsx";
+import Walletinvest from "./benefits.jsx";
+import Spaceheight from "./Spaceheight.jsx";
 const Wallet = ({ name, saldo, setSaldo, view, setView, coin, setCoin }) => {
   return (
     <section className="h-screen w-screen  bg-stone-950 justify-center ">
@@ -46,6 +48,10 @@ const Wallet = ({ name, saldo, setSaldo, view, setView, coin, setCoin }) => {
 
       <div className="">
         <AreaCard />
+        <Walletinvest />
+
+        {/* end space */}
+        <Spaceheight />
       </div>
       
     </section>
