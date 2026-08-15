@@ -15,7 +15,7 @@ const Login = () => {
 
   const loginclick = (e) => {
     
-    if (userlogin && passwordlogin) {
+    if (userlogin && passwordlogin && userlogin.length === 11) {
       return navigate("/configure");
     }
   };

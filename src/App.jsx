@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 import Wallet from './components/wallet'
@@ -17,6 +17,8 @@ const App = () => {
   const [saldo, setSaldo] = useState(3213)
   const [view, setView] = useState(false)
   const [coin, setCoin] = useState("$")
+
+  
 
   const router = createBrowserRouter([
     {

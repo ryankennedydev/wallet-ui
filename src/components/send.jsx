@@ -95,14 +95,14 @@ const [senduser, setsendUser] = useState("")
     <section className="flex w-screen bg-stone-950  ">
       
       <main className="m-5 flex flex-col gap-5 w-full sm:items-center mb-25">
-        <div className="flex gap-3 items-center ">
+        <div className="flex gap-3 items-center  w-full ">
           <div>
             <MoveLeft onClick={(e) => navigate("/home")}
               size={50}
               className="bg-stone-800/90 text-white p-3 rounded-full"
             />
           </div>
-          <div className="flex flex-col">
+          <div className="flex flex-col ">
             <h1 className="font-bold text-white text-lg">Send money</h1>
             <p className="text-stone-400 text-[15px]">
               Transfer funds securely
