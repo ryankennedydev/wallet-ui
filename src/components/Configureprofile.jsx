@@ -9,7 +9,7 @@ const Configureprofile = ({name, setName}) => {
   
 
   const nameadd = () => {
-    if (valuename && valuename.length <=20 ) {
+    if (valuename && valuename.length <=10 ) {
       setName(valuename)
       setvaluename("")
       navigation("/home")
@@ -29,7 +29,7 @@ const Configureprofile = ({name, setName}) => {
                 <h1 className='text-stone-100'>Your name</h1>
                 <div className='flex items-end flex-col'>
                   <input value={valuename} onChange={((e) => setvaluename(e.target.value))} placeholder='Enter your name' className=' outline-none w-full p-3 rounded-2xl text-stone-500 bg-stone-950 border-1 border-stone-600/40 placeholder:text-stone-500 ' type="text"  />
-                  <h1 className={`${valuename.length > 20 ? "text-red-500" :"text-stone-100" }`}>{valuename ? valuename.length : "0"}/20</h1>
+                  <h1 className={`${valuename.length > 10 ? "text-red-500" :"text-stone-100" }`}>{valuename ? valuename.length : "0"}/10</h1>
 
                 </div>
 

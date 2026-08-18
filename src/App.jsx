@@ -8,6 +8,7 @@ import Createaccount from './components/createaccount'
 import Send from './components/send'
 
 import Investments from './components/Investiments'
+import Settings from './components/Settings'
 
 const App = () => {
 
@@ -69,6 +70,13 @@ const App = () => {
       element: (
         <Wallet
           coin={coin} saldo={saldo} view={view} setSaldo={setSaldo} name={name} setView={setView} setCoin={setCoin}/>
+      )
+    },
+    {
+      path: "/settings",
+      element: (
+        <Settings
+          coin={coin} saldo={saldo} view={view} setSaldo={setSaldo} name={name} setView={setView} setCoin={setCoin} setName={setName}/>
       )
     },
 {
