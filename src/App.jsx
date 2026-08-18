@@ -76,7 +76,7 @@ const App = () => {
       path: "/settings",
       element: (
         <Settings
-          coin={coin} saldo={saldo} view={view} setSaldo={setSaldo} name={name} setView={setView} setCoin={setCoin} setName={setName}/>
+          coin={coin} saldo={saldo} view={view} setSaldo={setSaldo} name={name} setView={setView} setCoin={setCoin} saldo={saldo} setName={setName}/>
       )
     },
 {
