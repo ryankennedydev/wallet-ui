@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import Navbar from './Navbar'
 import { X, Eye, EyeClosed, Bell,ArchiveRestore ,LogOut, Coins } from 'lucide-react'
 import imgchangename from '../assets/imgchange.png'
-import Spaceheight from './Spaceheight'
 import { useNavigate } from 'react-router-dom'
 const Settings = ({
   name,
@@ -12,18 +11,19 @@ const Settings = ({
   view,
   setView,
   setSaldo,
-  saldo
+  saldo, coloricon, setcoloricon
 }) => {
     const navigate = useNavigate()
     const [disabledchange, setDisabledchange] = useState(false)
     const [lenghtchange,setlenghtchange] = useState("")
-    const [coloricon,setcoloricon] = useState("yellow")
+    
+    
 
   return (
-    <section className=' w-screen bg-stone-950 items-center justify-center'>
+    <section className=' w-screen  bg-stone-950 items-center justify-center'>
         
-        <Navbar />
-        <main className='flex flex-col  items-center justify-center p-4 gap-5'>
+        
+        <main className='flex flex-col min-h-screen items-center justify-center p-4 gap-5'>
             <div className='flex justify-between p-5 rounded-2xl gap-10 items-center w-full sm:w-150  bg-stone-900/70'>
                 <div className='flex gap-5 items-center'>
                     <div className={`flex rounded-full w-15 h-15 items-center  justify-center ${coloricon === "yellow" ? "bg-yellow-400" : coloricon === "blue" ? "bg-blue-600" : coloricon === "purple" ? "bg-purple-700" : coloricon === "cyan" ? "bg-cyan-500" : "bg-stone-500"}`}>
@@ -115,7 +115,7 @@ const Settings = ({
                             </div>
                         </div>
                         <div>
-                            <input onChange={() => setView(!view)} type="checkbox" className='w-12 h-6 accent-yellow-400 cursor-pointer' />
+                            <input  onChange={() => setView(!view)} type="checkbox" className='w-12 h-6 accent-yellow-400 cursor-pointer' />
                         </div>
                     </div>
                     <span className='w-full h-1 bg-stone-500/10 '></span>
@@ -151,10 +151,11 @@ const Settings = ({
                     </div>
                 </div>
             </div>
-            {/* spaceheight */}
-            <Spaceheight />
+            
 
         </main>
+        {/* nav bar */}
+        <Navbar />
     </section>
   )
 }

@@ -1,10 +1,11 @@
 import React from 'react'
-import { UserIcon } from 'lucide-react'
+import { UserIcon,Check } from 'lucide-react'
 const Contacts = ({senduser,setsendUser,newsend, setNewsend}) => {
 
 const newsendclick = (peoplesend) => {
   setNewsend(peoplesend)
 }
+
 
 const peoples = [
   {
@@ -71,12 +72,12 @@ const peoples = [
   return (
     <div className='flex flex-col'>
       
-      <div className='overflow-y-auto pb-5 h-45 flex flex-col gap-3  stroke-0 '>
+      <div className='overflow-y-auto pb-5 h-76 flex flex-col gap-5   stroke-0 '>
         {peoples.filter((e) => `${e.name} ${e.lastname} ${e.username}`.toLowerCase().includes(senduser.toLowerCase()) ).map((contact) => (
-            <div onClick={() => newsendclick(contact)  } key={contact.id} className='flex justify-between stroke-0'>
-                <div    className='flex gap-2 items-center cursor-pointer'>
-                    <div className='flex  bg-stone-800/50 p-2 h-12 w-12 rounded-full justify-center'>
-                      <h1  className='text-2xl text-stone-500 items-center  '>
+            <div onClick={() => {newsendclick(contact);}  } key={contact.id} className={`flex justify-between cursor-pointer p-4 items-center stroke-0 border-1 border-stone-600/10 bg-stone-700/10  rounded-2xl ${newsend.id === contact.id ? "bg-yellow-400/10 border-yellow-400/20" : "" }`} >
+                <div    className='flex gap-2 items-center '>
+                    <div className={`flex  bg-stone-800/50 border-1 border-stone-700/40 p-2 h-12 w-12 rounded-2xl justify-center border-1 ${newsend.id === contact.id ? "bg-yellow-400/10 border-yellow-400/20" : "" }`}>
+                      <h1  className={`text-2xl text-stone-500 items-center ${newsend.id === contact.id ? "text-yellow-400" : ""} `}>
                     {contact.username[1].toUpperCase()}
                     </h1>
                     </div>
@@ -87,8 +88,8 @@ const peoples = [
                     </div>
                 </div>
 
-                <div className='p-2 text-stone-700 items-center'>
-                  <UserIcon />
+                <div className={`p-2 text-stone-600 items-center bg-stone-400/10 rounded-lg ${newsend.id === contact.id ? "bg-yellow-400 text-stone-950" : ""}`}>
+                  {newsend.id === contact.id ? <Check /> : <UserIcon/>}
                 </div>
                 
             </div>

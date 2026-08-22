@@ -9,11 +9,11 @@ import Walletinvest from "./benefits.jsx";
 import Spaceheight from "./Spaceheight.jsx";
 const Wallet = ({ name, saldo, setSaldo, view, setView, coin, setCoin }) => {
   return (
-    <section className="h-screen w-screen  bg-stone-950 justify-center ">
+    <section className="h-screen w-screen  bg-stone-950 justify-center flex-col">
       
-      <Navbar />
-      <main className="justify-between flex  bg-stone-950 p-4 ">
-        <div className="flex gap-2 items-center  p-2 ">
+      
+      <main className="justify-between flex  bg-stone-950 p-4">
+        <div className="flex gap-2 items-center  p-2  ">
           <img
             className="w-8 h-8 rounded-full"
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfjtGvdcDXhvvVWgjNWR7G-bfWseWvP9y0RN5_wyg1rg&s=10"
@@ -31,7 +31,7 @@ const Wallet = ({ name, saldo, setSaldo, view, setView, coin, setCoin }) => {
         </div>
       </main>
       
-      <div className=" h-60 bg-linear-120 bg-stone-950   ">
+      <div className="flex gap-10  bg-linear-120 bg-stone-950 flex-col ">
         <Card
           saldo={saldo}
           setSaldo={setSaldo}
@@ -40,9 +40,7 @@ const Wallet = ({ name, saldo, setSaldo, view, setView, coin, setCoin }) => {
           view={view}
           setView={setView}
         />
-      </div>
-
-      <div>
+      
         <MoneyGlobal coin={coin} saldo={saldo} />
       </div>
 
@@ -50,10 +48,10 @@ const Wallet = ({ name, saldo, setSaldo, view, setView, coin, setCoin }) => {
         <AreaCard />
         <Walletinvest />
 
-        {/* end space */}
-        <Spaceheight />
+        
       </div>
-      
+      {/* navbar */}
+      <Navbar />
     </section>
   );
 };

@@ -10,6 +10,7 @@ import Send from './components/send'
 import Investments from './components/Investiments'
 import Settings from './components/Settings'
 
+
 const App = () => {
 
 
@@ -18,6 +19,7 @@ const App = () => {
   const [saldo, setSaldo] = useState(3213)
   const [view, setView] = useState(false)
   const [coin, setCoin] = useState("$")
+  const [coloricon,setcoloricon] = useState("yellow")
 
   
 
@@ -76,7 +78,7 @@ const App = () => {
       path: "/settings",
       element: (
         <Settings
-          coin={coin} saldo={saldo} view={view} setSaldo={setSaldo} name={name} setView={setView} setCoin={setCoin} saldo={saldo} setName={setName}/>
+          coin={coin} saldo={saldo} view={view} coloricon={coloricon} setcoloricon={setcoloricon} setSaldo={setSaldo} name={name} setView={setView} setCoin={setCoin} saldo={saldo} setName={setName}/>
       )
     },
 {

@@ -29,11 +29,11 @@ const [cartoes, setCartoes] = useState([
 
   return (
     <div className='flex flex-col w-screen  m-auto p-5 gap-5 bg-stone-950'>
-    <div className='flex justify-between sm:m-auto sm:gap-50 md:m-auto md:gap-70 text-stone-400 font-bold'>
+    <div className='flex justify-between sm:w-150 sm:m-auto sm:gap-50 md:m-auto md:gap-70 text-stone-400 font-bold'>
         <h1>CARD</h1>
         <h1>ADD+</h1>
     </div>
-      <main className='flex overflow-x-auto pb-5 w-full sm:w-80 sm:m-auto md:w-100 md:m-auto gap-5'>
+      <main className='flex overflow-x-auto pb-5 w-full sm:w-150 sm:m-auto md:w-100 md:m-auto gap-5'>
 
       {cartoes.map((card) => (
         <div key={card.id} className={`flex flex-col p-2 w-80 md:w-100 shrink-0  rounded-2xl m-auto relative overflow-hidden bg-gradient-to-br from-[#373636] via-[#9d9c9c] to-[#050505] shadow-2xl ${card.color === "black" ? "from-[#000000] via-[#121212] to-[#000000]" : ""}`}>

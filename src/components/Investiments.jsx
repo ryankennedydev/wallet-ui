@@ -110,11 +110,11 @@ const Investiments = ({ coin, investment, setInvestment }) => {
 
   return (
     <div>
-      <Navbar />
+      
 
-      <section className="flex w-screen min-h-screen bg-stone-950 h-full">
-        <main className="flex flex-col p-5 w-full gap-5">
-          <div className="flex justify-between text-stone-50  items-center">
+      <section className="flex flex-col w-screen min-h-screen bg-stone-950 h-full items-center justify-center">
+        <div className="flex w-full">
+          <div className="flex justify-between p-2 text-stone-50 w-full items-center">
             <div className="flex gap-2 items-center">
               <Home
                 onClick={backhome}
@@ -130,6 +130,9 @@ const Investiments = ({ coin, investment, setInvestment }) => {
               Wallet
             </h1>
           </div>
+        </div>
+        <main className="flex flex-col p-5 sm:sm:w-150  gap-5 ">
+          
           <div className="flex flex-col bg-gradient-to-br from-[#151515] via-[#2d2d2d] to-[#070707]  p-7 rounded-2xl gap-5  ">
             <div className="flex items-center gap-1 text-stone-500 font-bold ">
               <Wallet size={17} />
@@ -237,10 +240,11 @@ const Investiments = ({ coin, investment, setInvestment }) => {
               </div>
             </main>
           </div>
-          {/* spaceend */}
-          <Spaceheight />
+          
+          
         </main>
       </section>
+      <Navbar />
     </div>
   );
 };

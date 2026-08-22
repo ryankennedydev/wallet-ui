@@ -1,4 +1,4 @@
-import { Coins, MoveLeft, Search } from "lucide-react";
+import { Coins, MoveLeft, Search, SendHorizonal, QrCode } from "lucide-react";
 import Contacts from "./contacts";
 import { useState } from "react";
 import Historic from "./historic";
@@ -89,12 +89,12 @@ const [senduser, setsendUser] = useState("")
 
 
   return (
-    <div>
-      <Navbar />
-    
-    <section className="flex w-screen bg-stone-950  ">
+    <div className="bg-stone-950">
       
-      <main className="m-5 flex flex-col gap-5 w-full sm:items-center mb-25">
+    
+    <section className="flex w-screen bg-stone-950 ">
+      
+      <main className="m-5 flex flex-col gap-10 w-full sm:items-center  ">
         <div className="flex gap-3 items-center  w-full ">
           <div>
             <MoveLeft onClick={(e) => navigate("/home")}
@@ -110,15 +110,25 @@ const [senduser, setsendUser] = useState("")
           </div>
         </div>
 
-        <div className="bg-stone-700/20 w-full p-5 rounded-2xl flex flex-col gap-5  sm:w-80 md:w-100">
-          <h1 className="text-stone-400 text-[15px]">Amount</h1>
-
-          <div className="flex gap-1 items-center">
-            <h1 className="text-stone-400 font-bold text-3xl">{coin}</h1>
-            <input onChange={(e) => setamount(e.target.value)} type="number" placeholder="0.00" name="" id="" className="text-stone-400 font-bold text-3xl outline-none border-none w-50 placeholder:text-stone-600"/>
-            
+        <div className="bg-stone-900/20 w-full p-10 rounded-2xl flex flex-col gap-5 border-1 border-stone-500/10 shadow-2xs shadow-yellow-400 sm:w-80 sm:w-150">
+          <div className="flex justify-between gap-10">
+                <div className="text-stone-700">
+                  <h1 className="text-[16px] text-stone-600">TRANSFER AMOUNT</h1>
+                  <h1 className="text-[15px]">Enter the amount you want to send</h1>
+                </div>
+                <div className="">
+                  <SendHorizonal size={50} className="text-yellow-400 p-3 bg-yellow-300/10 border-1 border-stone-500/10 rounded-2xl"/>
+                </div>
+                
           </div>
 
+          <div className="flex gap-1 items-center">
+            <h1 className="text-yellow-400 text-3xl font-bold">{coin}</h1>
+            <h1 className="text-stone-400 font-bold text-3xl"></h1>
+            <input value={amount}  maxLength={10} onChange={(e) => {setamount(e.target.value); if (amount === "-") {setamount("")}}} type="text" placeholder="0.00" name="" id="" className="text-stone-400 font-bold text-3xl outline-none border-none w-50 placeholder:text-stone-600"/>
+            
+          </div>
+          <div className="w-full bg-stone-500/8 h-1"></div>
           <div className="flex justify-between items-center">
             <h1 className="text-stone-400 text-[15px]">Avaliance balance</h1>
             <h1 className="text-stone-200 ">{view ? "****" : `${coin} ${saldo.toFixed(2)}`}</h1>
@@ -127,11 +137,18 @@ const [senduser, setsendUser] = useState("")
           
       
         </div>
-        <div className="flex flex-col gap-5">
+        <div className="flex flex-col gap-5 sm:w-150">
           
-            <div className="flex justify-between">
-                <h1 className="text-stone-200">Recipient</h1>
-                <h1 className="text-stone-500 text-[15px]" >ScanQR</h1>
+            <div className="flex justify-between items-center">
+                <div className="flex-col">
+                  <h1 className="text-stone-100 font-bold">Recipient</h1>
+                  <h1 className="text-[15px] text-stone-600">Choose who will receive the transfer</h1>
+
+                </div>
+                <div className="flex gap-1 p-2 bg-stone-700/10 border-1 border-stone-500/10 rounded-2xl">
+                  <QrCode className="text-stone-500"/>
+                  <h1 className="text-stone-500 text-[15px]" >ScanQR</h1>
+                </div>
             </div>
 
             <div className="flex items-center relative gap-2">
@@ -139,12 +156,20 @@ const [senduser, setsendUser] = useState("")
               <input onChange={(e) => setsendUser(e.target.value)} value={senduser} placeholder="Search here" type="text" className="text-stone-100 text-[17px] w-full placeholder:text-stone-500  bg-stone-800/50 outline-none border-1 border-stone-800/100 p-2 rounded-2xl " />
             </div>
 
-            <div className="w-full h-50 ">
+            <div className="w-full h-80 ">
              <Contacts senduser={senduser} setsendUser={setsendUser} newsend={newsend} setNewsend={setNewsend}/>
             </div>
 
-            <div className="bg-stone-700/20 w-full p-5 rounded-2xl flex flex-col gap-2  sm:w-80 md:w-100">
-              <div className="flex justify-between"> 
+            <div className="bg-stone-700/20 w-full p-10 rounded-2xl flex flex-col gap-2  sm:w-150 ">
+              <main className="flex justify-between items-center"> 
+                <div className="flex-col">
+                  <h1 className="text-[20px] text-stone-100 font-bold">Transfer summary</h1>
+                  <h1 className="text-[15px] text-stone-600">Review your transaction</h1>
+                </div>
+                <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
+              
+              </main>
+              <div className="flex justify-between "> 
                 <h1 className="text-[15px] text-stone-600">Send to</h1>
                   <h1 className="text-stone-100 text-[15px]">{newsend.username}</h1>
               </div>
@@ -169,10 +194,12 @@ const [senduser, setsendUser] = useState("")
             
             
         </div>
-        <div className="flex group md:w-100">
-          <button onClick={() => {
+        <div className="flex group  sm:w-150">
+          <button  onClick={() => {
     if (amount && saldo >= amount && newsend &&amount > 0) {
       setSaldo(saldo-amount)
+      setamount("")
+      setNewsend("")
       setHistoriclist((prev) => [
         ...prev,
         {
@@ -190,12 +217,14 @@ const [senduser, setsendUser] = useState("")
         },
       ])
     }
-  }}   className="w-full md:w-full group-active:scale-98 hover:cursor-pointer text-black font-bold p-4 transition-all duration-200 ease-in hover:bg-stone-500 bg-stone-100 rounded-2xl">SEND</button>
+  }}   className="w-full md:w-full group-active:scale-98 hover:cursor-pointer flex text-black font-bold p-4 transition-all duration-100 ease-in   bg-yellow-400 rounded-2xl items-center gap-2 justify-center"><SendHorizonal /><h1>Send money</h1></button>
         </div>
         <Historic coin={coin} saldo={saldo} amount={amount} newsend={newsend} historiclist={historiclist} setHistoriclist={setHistoriclist} />
         
       </main>
     </section>
+    {/* nav bar */}
+    <Navbar />
     </div>
   );
 };

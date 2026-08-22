@@ -1,2 +1,22 @@
 @import "tailwindcss";
 
+.moveleftcard {
+    
+    animation: moveleft 15s linear infinite ;
+    width: max-content;
+
+}
+.moveleftcard:hover {
+    animation-play-state: paused;
+}
+
+@keyframes moveleft {
+    from {
+        transform: translateX(0);
+       
+        
+    }
+    to {
+        transform: translateX(-360px);
+    }
+}
