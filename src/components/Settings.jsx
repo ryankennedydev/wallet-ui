@@ -108,14 +108,14 @@ const Settings = ({
                     <div className='flex justify-between w-full items-center'>
                         
                         <div className='flex items-center gap-2'>
-                            <div  className='text-yellow-400'>{view === false ? <EyeClosed /> : <Eye />}</div>
+                            <div  className='text-yellow-400'>{view === false ? <Eye /> : <EyeClosed />}</div>
                             <div className='flex flex-col'>
                                 <h1 className='text-stone-300 text-[17px]'>Balance visibility</h1>
                                 <p className='text-stone-500 text-[15px]'>Show or hide your balance</p>
                             </div>
                         </div>
                         <div>
-                            <input  onChange={() => setView(!view)} type="checkbox" className='w-12 h-6 accent-yellow-400 cursor-pointer' />
+                            <input checked={view}  onChange={() => setView(!view)} type="checkbox" className='w-12 h-6 accent-yellow-400 cursor-pointer' />
                         </div>
                     </div>
                     <span className='w-full h-1 bg-stone-500/10 '></span>

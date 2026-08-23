@@ -53,7 +53,7 @@ const Card = ({saldo, setSaldo, coin, setCoin, view, setView}) => {
 
           </div>
 
-          <div className='flex gap-3'>
+          <div className='flex-col sm:flex-row flex gap-3'>
 
             <h1 className='text-4xl text-stone-950 font-bold'>
 
@@ -84,7 +84,7 @@ const Card = ({saldo, setSaldo, coin, setCoin, view, setView}) => {
 
               }}
 
-              className='bg-stone-950 text-yellow-400 rounded-2xl p-1 pl-3 pr-3 text-sm'
+              className='bg-stone-950 w-fit text-yellow-400 rounded-2xl p-1 pl-3 pr-3 text-sm'
 
               value={coin}
             >

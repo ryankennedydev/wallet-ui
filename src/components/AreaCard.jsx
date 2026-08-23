@@ -46,7 +46,7 @@ const AreaCard = () => {
       </div>
 
       {/* CARDS */}
-      <main className="flex overflow-x-auto w-full sm:w-150 mx-auto gap-5 pb-6 snap-x snap-mandatory">
+      <main className="flex overflow-x-auto w-full sm:w-150 mx-auto gap-5 pt-2 pb-6 snap-x snap-mandatory">
 
         {cartoes.map((card) => {
           const isBlack = card.color === "black";
